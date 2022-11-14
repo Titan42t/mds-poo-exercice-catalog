@@ -19,3 +19,9 @@ Route::get('/', function () {
 
     return view('home', ['movies' => $movies]);
 });
+
+Route::get('/movies/{id}', function ($id) {
+    $movies = Movie::find($id);
+
+    dd($movies);
+});
