@@ -13,9 +13,14 @@ class MovieController extends Controller
         return view('movie.show', ['movie' => $movie]);
     }
 
-    function list() {
-        $movies = Movie::all()->take(20);
+    function list(Request $request) {
+        $page = $request->input('page');
+        
+        $movies = Movie::all()->skip($page * 20)->take(20);
 
-        return view('movie.list', ['movies' => $movies]);
+        return view('movie.list', [
+            'movies' => $movies,
+            'page' => $page
+        ]);
     }
 }

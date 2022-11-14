@@ -1,0 +1,36 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.movie img {
+    height: 100%;
+    margin-right: 20px;
+}
+
+.movie p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {
+    background: rgb(255, 47, 92);
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 7px;
+    margin: 20px 25px;
+}

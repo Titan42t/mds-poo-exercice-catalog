@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+}
