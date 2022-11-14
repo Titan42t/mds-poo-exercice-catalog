@@ -12,4 +12,10 @@ class MovieController extends Controller
 
         return view('movie.show', ['movie' => $movie]);
     }
+
+    function list() {
+        $movies = Movie::all()->take(20);
+
+        return view('movie.list', ['movies' => $movies]);
+    }
 }
