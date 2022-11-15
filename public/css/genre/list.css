@@ -1,0 +1,9 @@
+.genre {
+    width: 15%;
+    text-align: center;
+    color: white;
+    background: rgb(255, 47, 92);
+    padding: 10px;
+    border-radius: 15px;
+    margin: 20px auto;
+}

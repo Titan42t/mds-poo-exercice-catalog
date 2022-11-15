@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MovieController;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,11 @@ Route::get('/', function () {
     return view('home', ['movies' => $movies]);
 });
 
-Route::get('/movie/{id}', [MovieController::class, 'show']);
-
 Route::get('/movies', [MovieController::class, 'list']);
 
-Route::get('/movies/random', [MovieController::class, 'random']);
+//Le where permet de prendre l'id que si c'est un chiffre
+Route::get('/movie/{id}', [MovieController::class, 'show'])->where(['id' => '[0-9]+']);
+
+Route::get('/movie/random', [MovieController::class, 'random']);
+
+Route::get('/genres', [GenreController::class, 'list']);
