@@ -1,14 +1,15 @@
 .list {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .movie {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: calc(50% - 15px);
     height: 200px;
-    margin: 20px auto;
+    margin: 20px 0;
 }
 
 .movie img {
@@ -16,9 +17,17 @@
     margin-right: 20px;
 }
 
-.movie p {
+.movie .title {
     font-size: 20px;
     font-weight: 700;
+}
+
+.movie .date {
+    font-size: 15px;
+}
+
+.movie .avis {
+    margin: 0 0 0 auto;
 }
 
 .pagination {

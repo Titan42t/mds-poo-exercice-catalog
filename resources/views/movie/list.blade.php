@@ -14,15 +14,21 @@
             @foreach ($movies as $movie)
                 <div class="movie">
                     <img src="{{$movie->poster}}"/> 
-                    <p>{{$movie->primaryTitle}}</p>
+                    <div>
+                        <p class="title">{{$movie->primaryTitle}}</p>
+                        <p class="date">{{$movie->startYear}}</p>
+                    </div>
+                    <p class="avis">{{$movie->averageRating}}/10 ⭐</p>
                 </div>
             @endforeach
         </div>
         <div class="pagination">
             @if ($page != 0)
-                <a href="/movies?page={{$page - 1}}">< Page précédente</a>
+                <a href="{{$movies->appends(request()->query())->previousPageUrl()}}">< Page précédente</a>
             @endif
-            <a href="/movies?page={{$page + 1}}">Page suivante ></a>
+            <a href="{{$movies->appends(request()->query())->nextPageUrl()}}">Page suivante ></a>
+        </div>
+        <div>
         </div>
     </div>
 </body>
