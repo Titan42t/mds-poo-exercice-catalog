@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -17,8 +18,15 @@ class MovieController extends Controller
         $page = $request->input('page');
         $orderBy = $request->input('order_by');
         $order = $request->input('order', 'asc');
+        $getGenre = $request->input('genre');
 
-        $query = Movie::query();
+        if ($getGenre != null) {
+            $id = Genre::query()->where('label', $getGenre)->first();
+            $query = Genre::find($id->id)->movies();
+        } else {
+            $query = Movie::query();
+        }
+
         if ($orderBy == "startYear" || $orderBy == "averageRating" || $orderBy == "primaryTitle") {
             $query->orderBy($orderBy, $order);
         }

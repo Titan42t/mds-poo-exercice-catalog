@@ -11,7 +11,7 @@
 <body>
     <div class="page">
         @foreach ($genres as $genre)
-            <p class="genre">{{$genre->label}}</p>
+            <a href="/movies?genre={{$genre->label}}"><p class="genre">{{$genre->label}}</p></a>
         @endforeach
     </div>
 </body>

@@ -7,3 +7,16 @@
     border-radius: 15px;
     margin: 20px auto;
 }
+
+a {
+    text-decoration: none;
+}
+
+.genre {
+    transition: color .3s ease-in-out;
+}
+
+.genre:hover {
+    color: black;
+    font-weight: 700;
+}
