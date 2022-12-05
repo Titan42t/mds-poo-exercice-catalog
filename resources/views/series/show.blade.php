@@ -17,6 +17,11 @@
             <p>Durée : {{$series->runtimeMinutes}} minutes</p>
             <p>{{$series->plot}}</p>
             <p>{{$series->averageRating}}/10 - {{$series->numVotes}} avis</p>
+            <div>
+                @foreach ($seasons as $season)
+                    <a href="/series/{{$series->id}}/season/{{$season->seasonNumber}}"><p>Saison {{$season->seasonNumber}}</p></a>
+                @endforeach
+            </div>
         </div>
     </div>
 </body>
