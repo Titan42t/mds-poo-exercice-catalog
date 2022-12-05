@@ -1,0 +1,45 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.series {
+    display: flex;
+    align-items: center;
+    width: calc(50% - 15px);
+    height: 200px;
+    margin: 20px 0;
+}
+
+.series img {
+    height: 100%;
+    margin-right: 20px;
+}
+
+.series .title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.series .date {
+    font-size: 15px;
+}
+
+.series .avis {
+    margin: 0 0 0 auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {
+    background: rgb(255, 47, 92);
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 7px;
+    margin: 20px 25px;
+}

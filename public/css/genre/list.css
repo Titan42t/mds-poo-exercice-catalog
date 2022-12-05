@@ -6,14 +6,11 @@
     padding: 10px;
     border-radius: 15px;
     margin: 20px auto;
+    transition: color .3s ease-in-out;
 }
 
 a {
     text-decoration: none;
-}
-
-.genre {
-    transition: color .3s ease-in-out;
 }
 
 .genre:hover {
