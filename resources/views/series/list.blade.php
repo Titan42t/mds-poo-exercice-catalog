@@ -12,14 +12,16 @@
     <div class="page">
         <div class="list">
             @foreach ($list as $series)
-                <div class="series">
-                    <img src="{{$series->poster}}"/> 
+                <a href="/series/{{$series->id}}" class="series">
                     <div>
-                        <p class="title">{{$series->primaryTitle}}</p>
-                        <p class="date">{{$series->startYear}}</p>
+                        <img src="{{$series->poster}}"/> 
+                        <div>
+                            <p class="title">{{$series->primaryTitle}}</p>
+                            <p class="date">{{$series->startYear}}</p>
+                        </div>
+                        <p class="avis">{{$series->averageRating}}/10 ⭐</p>
                     </div>
-                    <p class="avis">{{$series->averageRating}}/10 ⭐</p>
-                </div>
+                </a>
             @endforeach
         </div>
         <div class="pagination">

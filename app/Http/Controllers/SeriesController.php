@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class SeriesController extends Controller
 {
+    public function show($id) {
+        $series = Series::find($id);
+
+        return view('series.show', ['series' => $series]);
+    }
+
     public function list(Request $request) {
         $page = $request->input('page');
         $orderBy = $request->input('order_by');
@@ -30,6 +36,14 @@ class SeriesController extends Controller
         return view('series.list', [
             'list' => $series,
             'page' => $page
+        ]);
+    }
+
+    public function random() {
+        $series = Series::inRandomOrder()->first();
+
+        return view('series.show', [
+            'series' => $series
         ]);
     }
 }
